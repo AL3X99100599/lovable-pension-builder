@@ -2,41 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Pension Expert Germany Design System 
+All colors MUST be HSL. Performance-optimized fonts and variables.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Brand Colors - Pension Expert Germany */
+    --brand-navy: 210 100% 18%;        /* #002E5D */
+    --brand-gold: 48 100% 50%;         /* #FFCB00 */
+    --brand-light: 216 33% 97%;        /* #F5F7FA */
+    --brand-dark: 0 0% 7%;             /* #111 */
+    
+    /* Semantic Design Tokens */
+    --background: 216 33% 97%;          /* Light background */
+    --foreground: 0 0% 7%;              /* Dark text */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;                  /* White cards */
+    --card-foreground: 0 0% 7%;         
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 7%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 210 100% 18%;            /* Navy brand */
+    --primary-foreground: 0 0% 100%;    /* White on navy */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 216 33% 97%;           /* Light brand */
+    --secondary-foreground: 0 0% 7%;    
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 216 20% 94%;               /* Subtle backgrounds */
+    --muted-foreground: 215 14% 34%;    
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 48 100% 50%;              /* Gold CTA */
+    --accent-foreground: 0 0% 7%;       /* Dark on gold */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 216 20% 88%;
+    --input: 216 20% 88%;
+    --ring: 210 100% 18%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;                  /* Softer corners */
+    
+    /* Custom gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(210 100% 25%));
+    --gradient-cta: linear-gradient(135deg, hsl(var(--accent)), hsl(48 100% 45%));
+    --gradient-card: linear-gradient(180deg, hsl(var(--card)), hsl(216 20% 98%));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(var(--primary) / 0.1);
+    --shadow-strong: 0 8px 30px -4px hsl(var(--primary) / 0.2);
+    
+    /* Typography scale */
+    --font-heading: 'DM Serif Display', serif;
+    --font-body: 'Inter', sans-serif;
 
     --sidebar-background: 0 0% 98%;
 
