@@ -35,9 +35,9 @@ const HeroSection = () => {
               size="lg" 
               className="bg-gradient-cta hover:opacity-90 text-accent-foreground font-semibold px-8 py-4 text-lg shadow-strong"
             >
-              <Link to="/tools/pension-gap-calculator">
+              <Link to="/assessment">
                 <Calculator className="w-5 h-5 mr-2" />
-                {t('hero.cta')}
+                Take Free Assessment
               </Link>
             </Button>
           </div>

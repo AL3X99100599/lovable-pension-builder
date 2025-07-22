@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Hub from "./pages/Hub";
 import Tools from "./pages/Tools";
 import PensionCalculator from "./pages/PensionCalculator";
+import Assessment from "./pages/Assessment";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
             <Route path="/hub" element={<Hub />} />
             <Route path="/tools" element={<Tools />} />
             <Route path="/tools/pension-gap-calculator" element={<PensionCalculator />} />
+            <Route path="/assessment" element={<Assessment />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
