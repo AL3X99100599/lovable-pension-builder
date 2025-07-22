@@ -1,8 +1,10 @@
 import { Button } from '@/components/ui/button';
 import { Calculator, Users, Shield, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const HeroSection = () => {
+  const { t } = useLanguage();
   return (
     <section className="relative py-20 bg-gradient-hero overflow-hidden">
       {/* Background Pattern */}
@@ -16,17 +18,14 @@ const HeroSection = () => {
         <div className="max-w-4xl mx-auto text-center text-white">
           {/* Main Headline */}
           <h1 className="font-heading text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Private & State Pensions—
+            {t('hero.title')}
             <br />
-            <span className="text-accent">Explained in Plain English</span>
-            <br />
-            <span className="text-lg md:text-xl font-body font-normal">(und Deutsch)</span>
+            <span className="text-accent">{t('hero.subtitle')}</span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto">
-            Navigate Germany's complex pension system with confidence. 
-            Get expert guidance tailored to your situation.
+            {t('hero.description')}
           </p>
 
           {/* CTA Button */}
@@ -38,7 +37,7 @@ const HeroSection = () => {
             >
               <Link to="/tools/pension-gap-calculator">
                 <Calculator className="w-5 h-5 mr-2" />
-                Berechne deine Rentenlücke
+                {t('hero.cta')}
               </Link>
             </Button>
           </div>
@@ -47,15 +46,15 @@ const HeroSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
             <div className="flex items-center justify-center space-x-2">
               <Users className="w-5 h-5 text-accent" />
-              <span className="text-sm">2000+ Consultations</span>
+              <span className="text-sm">{t('hero.consultations')}</span>
             </div>
             <div className="flex items-center justify-center space-x-2">
               <Award className="w-5 h-5 text-accent" />
-              <span className="text-sm">★★★★★ 4.9/5 Rating</span>
+              <span className="text-sm">{t('hero.rating')}</span>
             </div>
             <div className="flex items-center justify-center space-x-2">
               <Shield className="w-5 h-5 text-accent" />
-              <span className="text-sm">BaFin Regulated</span>
+              <span className="text-sm">{t('hero.regulated')}</span>
             </div>
           </div>
         </div>

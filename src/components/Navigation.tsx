@@ -3,18 +3,20 @@ import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Globe } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { language, setLanguage, t } = useLanguage();
   
   const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'Hub', href: '/hub' },
-    { name: 'Tools', href: '/tools' },
-    { name: 'Services', href: '/services' },
-    { name: 'Resources', href: '/resources' },
-    { name: 'About', href: '/about' },
+    { name: t('nav.home'), href: '/' },
+    { name: t('nav.hub'), href: '/hub' },
+    { name: t('nav.tools'), href: '/tools' },
+    { name: t('nav.services'), href: '/services' },
+    { name: t('nav.resources'), href: '/resources' },
+    { name: t('nav.about'), href: '/about' },
   ];
 
   const isActive = (path: string) => {
@@ -56,12 +58,17 @@ const Navigation = () => {
 
           {/* Language Switch & CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" size="sm" className="gap-2">
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              className="gap-2"
+              onClick={() => setLanguage(language === 'de' ? 'en' : 'de')}
+            >
               <Globe className="h-4 w-4" />
-              DE
+              {language.toUpperCase()}
             </Button>
             <Button variant="default" size="sm" className="bg-gradient-cta hover:opacity-90">
-              Free Consultation
+              {t('nav.consultation')}
             </Button>
           </div>
 
@@ -95,12 +102,17 @@ const Navigation = () => {
                 </Link>
               ))}
               <div className="pt-4 border-t border-border">
-                <Button variant="ghost" size="sm" className="gap-2 mb-2">
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className="gap-2 mb-2"
+                  onClick={() => setLanguage(language === 'de' ? 'en' : 'de')}
+                >
                   <Globe className="h-4 w-4" />
-                  DE
+                  {language.toUpperCase()}
                 </Button>
                 <Button className="w-full bg-gradient-cta hover:opacity-90">
-                  Free Consultation
+                  {t('nav.consultation')}
                 </Button>
               </div>
             </div>
